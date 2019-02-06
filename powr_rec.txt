@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+int powr(int x,int y)
+{
+    if(y==0)
+    {
+        return 1;
+    }
+    else if(y&1)
+    {
+        return x*(powr(x,y/2)*powr(x,y/2));
+    }
+    else{
+        return (powr(x,y/2)*powr(x,y/2));
+    }
+}
+int main() {
+ int a,b,ans;
+ cin>>a>>b;
+ ans=powr(a,b);
+ cout<<ans;
+}
